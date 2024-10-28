@@ -70,14 +70,9 @@ auto Entity::hasSprite() const -> bool
     return m_tileset != nullptr;
 }
 
-auto Entity::getTexturePath() const -> const std::string&
+auto Entity::getTileset() const -> const Tileset&
 {
-    static const std::string empty;
-    if (m_tileset == nullptr) {
-        return empty;
-    }
-
-    return m_tileset->path;
+    return *m_tileset;
 }
 
 auto Entity::getTextureRect() const -> const IntRect&

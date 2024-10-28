@@ -45,7 +45,7 @@ namespace ldtk {
         auto getPivot() const -> const FloatPoint&;
 
         auto hasSprite() const -> bool;
-        auto getTexturePath() const -> const std::string&;
+        auto getTileset() const -> const Tileset&;
         auto getTextureRect() const -> const IntRect&;
 
         auto hasNineSlice() const -> bool;
