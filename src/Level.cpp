@@ -51,7 +51,7 @@ Level::Level(const nlohmann::json& j, World* w)
     }
     else {
         m_bg_image = BgImage();
-        m_bg_image->path = FilePath(j["bgRelPath"].get<std::string>());
+        m_bg_image->path = {j["bgRelPath"].get<std::string>()};
         m_bg_image->pos = {j["__bgPos"]["topLeftPx"][0].get<int>(), j["__bgPos"]["topLeftPx"][1].get<int>()};
         m_bg_image->scale = {j["__bgPos"]["scale"][0].get<float>(), j["__bgPos"]["scale"][1].get<float>()};
         m_bg_image->crop = {

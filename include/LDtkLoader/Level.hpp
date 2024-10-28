@@ -25,7 +25,7 @@ namespace ldtk {
     public:
         struct BgImage
         {
-            FilePath path;
+            std::string path;
             IntPoint pos;
             FloatPoint scale;
             IntRect crop;

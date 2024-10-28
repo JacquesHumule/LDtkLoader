@@ -160,6 +160,7 @@ namespace ldtk {
         auto directory() const -> std::string;
         auto filename() const -> std::string;
         auto extension() const -> std::string;
+        auto str() const -> const std::string;
     };
 
     using FileLoader = std::function<std::unique_ptr<std::streambuf>(const std::string&)>;
