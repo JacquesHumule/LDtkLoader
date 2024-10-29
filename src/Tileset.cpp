@@ -45,7 +45,8 @@ Tileset::Tileset(const nlohmann::json& j, Project* p)
 
 auto Tileset::getTileTexturePos(int tile_id) const -> IntPoint
 {
-    auto grid_width = texture_size.x / tile_size;
+    const auto div = std::div(texture_size.x, tile_size);
+    int const grid_width = div.quot + (div.rem > 0 ? 1 : 0);
     return {
         padding + (tile_id % grid_width) * (tile_size + spacing),
         padding + (tile_id / grid_width) * (tile_size + spacing)
